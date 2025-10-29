@@ -1,0 +1,129 @@
+:root {
+  --siteburgundy: rgb(130, 0, 40);
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Header bar */
+header {
+  background-color: var(--siteburgundy);
+  color: aliceblue;
+  line-height: 1.4rem;
+  font-size: 0.9em;
+  padding: 0.6rem 0;
+}
+
+/* Common spacing to align with screenshots */
+article,
+aside {
+  margin-left: 2rem;
+}
+
+/* Aside styling (yellow card with quotes) */
+aside {
+  background-color: rgb(240, 200, 120);
+  padding-left: 1em;
+  padding-top: 0.1em;
+  padding-bottom: 0.25em;
+}
+
+/* Big photo block */
+.secondbox {
+  background-image: url("../images/makerspace.jpg");
+  background-size: cover;
+  width: 90vw;
+  height: 60vw;
+}
+
+/* Type tweaks */
+h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 500;
+  font-size: 1.9rem;
+}
+
+.ingress {
+  font-weight: 700;
+  color: #666666;
+}
+
+aside > p {
+  font-family: "Times New Roman", Times, serif;
+  font-style: oblique;
+  font-size: larger;
+}
+
+/* Footer boxes */
+footer > div {
+  margin-left: 2rem;
+  margin-bottom: 0.4rem;
+  padding: 0.4rem;
+  border-style: dashed;
+  font-size: smaller;
+}
+
+/* =========================
+   Hamburger menu (checkbox)
+   ========================= */
+
+
+
+/* At desktop (>= 701px): show horizontal menu, hide icon */
+
+#burger-toggle {
+  display: none;
+}
+@media (min-width: 701px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    gap: 0;
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+
+  .menu li {
+    padding-right: 4rem;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+  
+}
+
+/* At mobile (<= 700px): show burger icon and collapsible list */
+@media (max-width: 700px) {
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  .menu-icon {
+    display: block;
+    background-image: url("../images/menu.svg");
+    background-size: cover;
+    height: 40px;
+    width: 40px;
+    margin-left: 1rem;
+  }
+
+  /* Hide items by default */
+  .menu li {
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.2s ease;
+  }
+
+  /* When checkbox is checked, reveal items */
+  #burger-toggle:checked ~ .menu li {
+    height: 1.4rem;
+    width: auto;
+  }
+}

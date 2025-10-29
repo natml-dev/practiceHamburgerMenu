@@ -125,5 +125,17 @@ footer > div {
   #burger-toggle:checked ~ .menu li {
     height: 1.4rem;
     width: auto;
+    background-color: var(--siteburgundy);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .hamburger-toggle-container {
+     cursor:pointer;
+  }
+  nav {
+    display: flex;
+
+   height: 40px;
   }
 }

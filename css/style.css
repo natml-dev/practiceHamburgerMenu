@@ -31,13 +31,70 @@ aside {
 }
 
 /* Big photo block */
-.secondbox {
-  background-image: url("../images/makerspace.jpg");
-  background-size: cover;
-  width: 90vw;
-  height: 60vw;
-}
 
+/** GRID**/
+@media (max-width: 839px) {
+    .secondbox {
+        background-image: url("../images/makerspace.jpg");
+        background-size: cover;
+        width: 90vw;
+        height: 60vw;
+    }
+    /* Footer boxes */
+    footer > div {
+        margin-left: 2rem;
+        margin-bottom: 0.4rem;
+        padding: 0.4rem;
+        border-style: dashed;
+        font-size: smaller;
+    }
+}
+@media (min-width: 840px) {
+    .gridcontainer {
+        display: grid;
+        grid-template-columns: minmax(500px, 40vw) minmax(300px, 20vw) auto;
+        grid-template-rows: minmax(100px, auto);
+    }
+    .mainbox {
+        grid-column:1/2;
+        grid-row: 1;
+    }
+    .secondbox {
+        grid-column:1/2;
+        grid-row: 2;
+        background-image: url("../images/makerspace.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 40vw;
+        max-height: 450px;
+    }
+    aside {
+        grid-column: 2 / 3;
+        grid-row: 1;
+    }
+    footer {
+        display: grid;
+        grid-template-columns: minmax(200px, 20vw) minmax(200px, 20vw) minmax(200px, 20vw) auto;
+
+    }
+    .footerleft {
+        grid-column: 1 / 2;
+        grid-row: 3;
+        padding-left: 1rem;
+    }
+    .footermiddle {
+        grid-column: 2 / 3;
+        grid-row: 3;
+        border-left: 2px dashed #666666;
+        border-right: 2px dashed #666666;
+        padding-left: 1rem;
+    }
+    .footerright {
+        grid-column: 3 / 4;
+        grid-row: 3;
+
+    }
+}
 /* Type tweaks */
 h1 {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -56,14 +113,7 @@ aside > p {
   font-size: larger;
 }
 
-/* Footer boxes */
-footer > div {
-  margin-left: 2rem;
-  margin-bottom: 0.4rem;
-  padding: 0.4rem;
-  border-style: dashed;
-  font-size: smaller;
-}
+
 
 /* =========================
    Hamburger menu (checkbox)
@@ -118,7 +168,7 @@ footer > div {
 
   /* Hide items by default */
   .menu li {
-    height: 0px;
+    height: 0;
     overflow: hidden;
     transition: height 0.2s ease;
   }
